@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://10.44.0.36:8010/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Trade &amp; Cross Border</title>
+  <style>
+    :root {
+      --orange:#FF7A00; --orange-dark:#E86E00; --orange-soft:#FFF2E6;
+      --ink:#161616; --muted:#6b6f76; --line:#e6e8ee; --bg:#f4f5f7; --card:#fff;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font:14px/1.45 "Segoe UI", sans-serif; }
+    header { background:var(--card); border-bottom:3px solid var(--orange); }
+    header div { max-width:1100px; margin:auto; padding:14px 22px; display:flex; align-items:center; gap:12px; }
+    .brand { color:var(--orange); font-size:22px; font-weight:800; display:inline-flex; align-items:center; text-decoration:none; }
+    .brand img { height:26px; width:auto; display:block; }
+    .divider { width:1px; height:20px; background:var(--line); }
+    h1 { font-size:17px; margin:0; font-weight:650; }
+    main { max-width:1100px; margin:auto; padding:28px 22px 56px; }
+    .lead { color:var(--muted); margin:0 0 22px; font-size:14px; }
+    .grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .product { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 20px; text-decoration:none; color:inherit; min-height:180px; }
+    a.product:hover { border-color:var(--orange); box-shadow:0 0 0 3px var(--orange-soft); }
+    .product.soon { opacity:.72; cursor:default; }
+    .pill { display:inline-block; padding:2px 8px; border-radius:99px; background:var(--orange-soft); color:var(--orange-dark); font-size:11px; font-weight:700; }
+    .pill.wait { background:#eef0f3; color:var(--muted); }
+    h2 { margin:10px 0 8px; font-size:20px; }
+    p { margin:0; color:var(--muted); font-size:13px; }
+    @media(max-width:900px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <a href="http://10.44.0.36:8010/" class="brand" data-logo=""><img alt="Inter" src="./Global Trade &amp; Cross Border_files/logo-inter.png"></a>
+    <span class="divider"></span>
+    <h1>Global Trade &amp; Cross Border</h1>
+  </div>
+</header>
+<main>
+  <p class="lead">Escolha o painel.</p>
+  <div class="grid">
+    <a class="product" href="http://10.44.0.36:8010/simuladores">
+      <span class="pill">Disponível</span>
+      <h2>Simuladores de parcela</h2>
+      <p>4.131, FINIMP e NCE/CCE. Fluxo, taxas e proposta indicativa.</p>
+    </a>
+    <a class="product" href="http://10.44.0.36:8010/ftp">
+      <span class="pill">Disponível</span>
+      <h2>FTP Trade Finance</h2>
+      <p>Custo de caixa local e offshore por produto e moeda. A grade ALM fica no topo da cotação.</p>
+    </a>
+    <a class="product" href="http://10.44.0.36:8010/fx">
+      <span class="pill">Disponível</span>
+      <h2>Painel FX</h2>
+      <p>NDF USD e câmbio pronto, com preço ao vivo.</p>
+    </a>
+    <div class="product soon">
+      <span class="pill wait">Em desenvolvimento</span>
+      <h2>SWAP</h2>
+      <p>Cotação e fluxo de SWAP. Ainda não está neste painel.</p>
+    </div>
+  </div>
+</main>
+<script>
+  function mountLogo(container, index = 0) {
+    const sources = ['/assets/logo-inter.png', '/assets/logo-inter.svg'];
+    if (index >= sources.length) { container.textContent = 'inter'; return; }
+    const img = new Image();
+    img.alt = 'Inter';
+    img.onload = () => container.replaceChildren(img);
+    img.onerror = () => mountLogo(container, index + 1);
+    img.src = sources[index];
+  }
+  document.querySelectorAll('[data-logo]').forEach(el => mountLogo(el));
+</script>
+
+
+</body></html>
